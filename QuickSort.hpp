@@ -2,7 +2,7 @@
 #include <chrono>
 
 
-int partitionFirstPivot(int arr[], int low, int high, long long& comp) {
+int partitionFirstPivot(int arr[], int low, int high, double& comp) {
     int pivot = arr[low];
     int i = low + 1;
 
@@ -19,7 +19,7 @@ int partitionFirstPivot(int arr[], int low, int high, long long& comp) {
     return i - 1;
 }
 
-void quickSortRec(int arr[], int low, int high, long long& comp) {
+void quickSortRec(int arr[], int low, int high, double& comp) {
     comp++;
     if (low < high) {
         int pi = partitionFirstPivot(arr, low, high, comp);
@@ -29,8 +29,8 @@ void quickSortRec(int arr[], int low, int high, long long& comp) {
     }
 }
 
-std::pair<long long, double> quickSort(int arr[], int n) {
-    long long comp = 0;
+std::pair<double, double> quickSort(int arr[], int n) {
+    double comp = 0;
     auto start = std::chrono::high_resolution_clock::now();
     if (n > 1) {
         quickSortRec(arr, 0, n - 1, comp);

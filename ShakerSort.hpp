@@ -2,26 +2,24 @@
 #include <chrono>
 #include <vector>
 
-std::pair<long long, double> ShakerSort(int arr[], int n) 
+std::pair<double, double> ShakerSort(int a[], int n)
 {
-    int compare = 0;
-    auto startTime = std::chrono::high_resolution_clock::now();
-    bool is_swapped = true;
-    int start = 0;
-    int end = n - 1;
-
-    while (is_swapped) 
+    double compare = 0;
+    auto start = std::chrono::high_resolution_clock::now();
+    int Left = 0;
+    int Right = n - 1;
+    int k = 0;
+    int i;
+    while (Left < Right)
     {
         compare++;
-        is_swapped = false;
-
-        for (int i = start; i < end; ++i) 
+        for (i = Left; i < Right; i++)
         {
             compare += 2;
             if (arr[i] > arr[i + 1]) 
             {
-                std::swap(arr[i], arr[i + 1]);
-                is_swapped = true;
+                std::swap(a[i], a[i + 1]);
+                k = i;
             }
         }
         compare += 2;
@@ -38,8 +36,8 @@ std::pair<long long, double> ShakerSort(int arr[], int n)
             compare+=2;
             if (arr[i] > arr[i + 1]) 
             {
-                std::swap(arr[i], arr[i + 1]);
-                is_swapped = true;
+                std::swap(a[i], a[i - 1]);
+                k = i;
             }
         }
         compare++;

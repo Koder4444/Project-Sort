@@ -56,10 +56,10 @@ int main(int argc, char** argv)
         return "";
         };
 
-    auto runAlgorithm = [&](string algo, vector<int>& a, double& time, long long& comp) {
+    auto runAlgorithm = [&](string algo, vector<int>& a, double& time, double& comp) {
         int n = a.size();
 
-        std::pair<long long, double> res;
+        std::pair<double, double> res;
 
         if (algo == "selection-sort") res = runSelectionSort(a);
         else if (algo == "insertion-sort") res = InsertionSort(a.data(), n);
@@ -136,7 +136,7 @@ int main(int argc, char** argv)
                 int n = a.size();
 
                 double time;
-                long long comp;
+                double comp;
 
                 runAlgorithm(algo, a, time, comp);
 
@@ -173,7 +173,7 @@ int main(int argc, char** argv)
             cout << "-----------------------------------\n";
 
             double time;
-            long long comp;
+            double comp;
 
             runAlgorithm(algo, a, time, comp);
 
@@ -243,7 +243,7 @@ int main(int argc, char** argv)
         cout << "-----------------------------------\n";
 
         double time1 = 0.0, time2 = 0.0;
-        long long comp1 = 0, comp2 = 0;
+        double comp1 = 0, comp2 = 0;
 
         runAlgorithm(algo1, a1, time1, comp1);
         runAlgorithm(algo2, a2, time2, comp2);

@@ -2,19 +2,19 @@
 #include <chrono>
 #include <vector>
 
-std::pair<long long, double> BubbleSort(int a[], int n)
+std::pair<double, double> BubbleSort(int a[], int n)
 {
-    int compare = 0;
-
+    double compare = 0;
+   
     auto start = std::chrono::high_resolution_clock::now();
-
+    bool swapped = false;
     for (int i = 0; i < n - 1; i++)
     {
-        bool swapped = false;
-
+        compare++;
+        swapped = false;
         for (int j = 0; j < n - i - 1; j++)
         {
-            compare++;
+            compare += 2;
 
             if (a[j] > a[j + 1])
             {
@@ -22,10 +22,14 @@ std::pair<long long, double> BubbleSort(int a[], int n)
                 swapped = true;
             }
         }
+        
+        compare++;
 
-        if (!swapped)
+        if (!swapped) {
             break;
+        }
     }
+    compare++;
 
     auto end = std::chrono::high_resolution_clock::now();
 

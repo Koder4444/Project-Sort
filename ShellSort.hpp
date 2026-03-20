@@ -3,9 +3,9 @@
 
 using namespace std;
 
-std::pair<long long, double> shellSort(int a[], int n){
+std::pair<double, double> shellSort(int a[], int n){
     auto start = chrono::high_resolution_clock::now();
-    int compare = 0;
+    double compare = 0;
 
     for (int gap = n / 2; gap > 0; gap /= 2){
         for (int i = gap; i < n; i++){

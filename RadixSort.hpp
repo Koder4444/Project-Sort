@@ -37,8 +37,8 @@ void countSortForRadix(int arr[], int n, int exp) {
     delete[] output;
 }
 
-std::pair<long long, double> radixSort(int arr[], int n) {
-    long long comp = 0;
+std::pair<double, double> radixSort(int arr[], int n) {
+    double comp = 0;
     auto start = std::chrono::high_resolution_clock::now();
     if (n <= 1) return { 0, 0 };
 
