@@ -3,7 +3,7 @@
 #include <chrono>
 #include <random>
 
-void selectionSort(std::vector<int> &a, unsigned long long &compCount)
+void selectionSort(std::vector<int> &a, double &compCount)
 {
     int n = a.size();
     compCount = 0;
@@ -27,9 +27,9 @@ void selectionSort(std::vector<int> &a, unsigned long long &compCount)
     }
 }
 
-std::pair<long long, double> runSelectionSort(std::vector<int> data)
+std::pair<double, double> runSelectionSort(std::vector<int> data)
 {
-    unsigned long long comparisons = 0;
+    double comparisons = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
 

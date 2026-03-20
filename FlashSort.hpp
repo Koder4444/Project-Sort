@@ -3,7 +3,7 @@
 #include <chrono>
 #include <random>
 
-void flashSort(std::vector<int> &a, unsigned long long &compCount)
+void flashSort(std::vector<int> &a, double &compCount)
 {
     int n = a.size();
     if (n <= 1)
@@ -90,9 +90,9 @@ void flashSort(std::vector<int> &a, unsigned long long &compCount)
     }
 }
 
-std::pair<long long, double> runFlashSort(std::vector<int> data)
+std::pair<double, double> runFlashSort(std::vector<int> data)
 {
-    unsigned long long comparisons = 0;
+    double comparisons = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
 

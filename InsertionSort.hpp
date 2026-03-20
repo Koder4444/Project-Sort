@@ -2,7 +2,7 @@
 #include <chrono>
 #include <vector>
 
-std::pair<long long, double> InsertionSort(int a[], int n)
+std::pair<double, double> InsertionSort(int a[], int n)
 {
     int compare = 0;
 
@@ -10,12 +10,13 @@ std::pair<long long, double> InsertionSort(int a[], int n)
 
     for (int i = 1; i < n; i++)
     {
+        compare++;
         int key = a[i];
         int j = i - 1;
 
         while (j >= 0)
         {
-            compare++;
+            compare += 2;
 
             if (a[j] > key)
             {
@@ -25,9 +26,11 @@ std::pair<long long, double> InsertionSort(int a[], int n)
             else
                 break;
         }
+        compare++;
 
         a[j + 1] = key;
     }
+    compare++;
 
     auto end = std::chrono::high_resolution_clock::now();
 

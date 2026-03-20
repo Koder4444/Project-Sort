@@ -3,7 +3,7 @@
 #include <chrono>
 #include <random>
 
-void heapify(std::vector<int> &a, int n, int i, unsigned long long &compCount)
+void heapify(std::vector<int> &a, int n, int i, double &compCount)
 {
     int largest = i; 
     int left = 2 * i + 1;
@@ -34,7 +34,7 @@ void heapify(std::vector<int> &a, int n, int i, unsigned long long &compCount)
     }
 }
 
-void heapSort(std::vector<int> &a, unsigned long long &compCount)
+void heapSort(std::vector<int> &a, double &compCount)
 {
     int n = a.size();
     compCount = 0;
@@ -51,9 +51,9 @@ void heapSort(std::vector<int> &a, unsigned long long &compCount)
     }
 }
 
-std::pair<long long, double> runHeapSort(std::vector<int> data)
+std::pair<double, double> runHeapSort(std::vector<int> data)
 {
-    unsigned long long comparisons = 0;
+    double comparisons = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
 
