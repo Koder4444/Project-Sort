@@ -25,6 +25,7 @@ std::pair<double, double> ShakerSort(int a[], int n)
         compare += 2;
         if (!is_swapped) 
         {
+            compare--;
             break;
         }
 
