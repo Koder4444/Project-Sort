@@ -128,6 +128,7 @@ int main(int argc, char** argv)
                     else if (order == "-sorted") orderIdx = 1;
                     else if (order == "-rev") orderIdx = 2;
                     else if (order == "-nsorted") orderIdx = 3;
+                    i = orderIdx;
                 }
 
                 cout << "Input order: " << strorder[orderIdx] << "\n";
