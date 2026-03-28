@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.18) # Higher version required for better CUDA support
+cmake_minimum_required (VERSION 3.18)
 
 # Enable Hot Reload for MSVC
 if (POLICY CMP0141)
@@ -14,4 +14,6 @@ target_compile_features(ProjectSort PUBLIC cxx_std_17)
 
 if(MSVC)
     target_link_options(ProjectSort PRIVATE "/STACK:32000000")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    target_link_options(ProjectSort PRIVATE "-Wl,--stack,32000000")
 endif()
