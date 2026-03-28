@@ -27,8 +27,7 @@ if %errorlevel% equ 0 (
 where g++ >nul 2>nul
 if %errorlevel% equ 0 (
     echo [INFO] Compiling directly with g++...
-    :: -Wl,--stack,32000000 sets the stack size to ~32MB for GCC/MinGW 
-    g++ src/*.cpp -std=c++17 -Wl,--stack,%STACK_SIZE% -O3 -o %EXE_NAME%
+    g++ src/*.cpp -std=c++17 -Wl,--stack,%STACK_SIZE% -o %EXE_NAME%
     
     if %errorlevel% equ 0 (
         echo [SUCCESS] Build completed via g++.
