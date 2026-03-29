@@ -41,7 +41,8 @@ Parameter      | Flag/Value   | Description
 ---------------|--------------|---------------------------------------------
 Mode           | -a           | Algorithm Mode: Run one algorithm.
                | -c           | Comparison Mode: Compare two algorithms.
-Algorithm      | [name]       | selection-sort, insertion-sort, bubble-sort,
+Algorithm      | [name]       | selection-sort, insertion-sort
+               |              | binary-insertion-sort, bubble-sort,
                |              | shaker-sort, shell-sort, heap-sort, merge-sort,
                |              | quick-sort, counting-sort, radix-sort,
                |              | flash-sort.
@@ -75,4 +76,4 @@ USING CMAKE (RECOMMENDED):
   4. cmake --build . --config Release
 
 OR:
-  Run build.bat if you have g++ installed.
+  Run build.bat.
