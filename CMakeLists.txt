@@ -10,6 +10,8 @@ project("Project-Sort" LANGUAGES CXX)
 
 add_executable(ProjectSort "src/Project-Sort.cpp")
 
+set_target_properties(ProjectSort PROPERTIES OUTPUT_NAME "01")
+
 target_compile_features(ProjectSort PUBLIC cxx_std_17)
 
 if(MSVC)
